@@ -7,7 +7,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-additional-facility',
   templateUrl: './additional-facility.component.html',
-  styleUrls: ['./additional-facility.component.css']
+  styleUrls: ['./additional-facility.component.scss'] 
+  //testnnn
 })
 export class AdditionalFacilityComponent implements OnInit {
   form = new FormGroup({});

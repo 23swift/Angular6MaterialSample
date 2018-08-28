@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatToolbarModule,MatTooltipModule,} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -20,13 +21,31 @@ import {MatListModule} from '@angular/material/list';
 import { NewAffiliationComponent } from './new-affiliation/new-affiliation.component';
 import { PosRequestComponent } from './pos-request/pos-request.component';
 import { MatDatepickerModule , MatInputModule, MatNativeDateModule,MatTableModule,
-MatTabsModule,MatStepperModule} from '@angular/material';
+MatTabsModule,MatChipsModule,MatGridListModule} from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
 import { CalendarTypeComponent } from './calendar-type/calendar-type.component';
 import { BdoFormHeaderComponent } from './bdo-form-header/bdo-form-header.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MidRequestComponent } from './mid-request/mid-request.component';
 import { PosRequestStepperComponent } from './pos-request-stepper/pos-request-stepper.component';
+import { BranchListComponent } from './branch-list/branch-list.component';
+import { BranchAffiliationComponent } from './branch-affiliation/branch-affiliation.component';
+import { AdditionalFacilityComponent } from './additional-facility/additional-facility.component';
+import { FileMaintenanceComponent } from './file-maintenance/file-maintenance.component';
+import { AppBaseComponent } from './app-base/app-base.component';
+import { ExtentionComponent } from './extention/extention.component';
+import { BranchComponent } from './branch/branch.component';
+import { NewAffiliationStepComponent } from './new-affiliation-step/new-affiliation-step.component';
+import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { OcularInspectionFormComponent } from './ocular-inspection-form/ocular-inspection-form.component';
+import { DocumentCheckListComponent } from './document-check-list/document-check-list.component';
+import { NewAffiliationSumComponent } from './new-affiliation-sum/new-affiliation-sum.component';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { MaefFieldsComponent } from './maef-fields/maef-fields.component';
+import { AwrFormComponent } from './forms/awr-form/awr-form.component';
+import { RequestFormComponent } from './forms/request-form/request-form.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +56,24 @@ import { PosRequestStepperComponent } from './pos-request-stepper/pos-request-st
     BdoFormHeaderComponent,
     MainNavComponent,
     MidRequestComponent,
-    PosRequestStepperComponent
+    PosRequestStepperComponent,
+    BranchListComponent,
+    BranchAffiliationComponent,
+    AdditionalFacilityComponent,
+    FileMaintenanceComponent,
+    AppBaseComponent,
+    ExtentionComponent,
+    BranchComponent,
+    NewAffiliationStepComponent,
+    HomeScreenComponent,
+    OcularInspectionFormComponent,
+    DocumentCheckListComponent,
+    NewAffiliationSumComponent,
+    CustomerProfileComponent,
+    MaefFieldsComponent,
+    AwrFormComponent,
+    RequestFormComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -72,7 +108,10 @@ import { PosRequestStepperComponent } from './pos-request-stepper/pos-request-st
     MatTooltipModule,
     MatTableModule,
     MatTabsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatChipsModule,
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

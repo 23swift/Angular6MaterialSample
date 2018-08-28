@@ -8,23 +8,25 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   templateUrl: './app-base.component.html',
   styleUrls: ['./app-base.component.css']
 })
-export class AppBaseComponent implements OnInit {
+export class AppBaseComponent  {
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
+  
   fields: FormlyFieldConfig[];
-  title :string='Additional Facility';
+  title :string='';
   subTitle:string='Create';
   mode:string;
-  executeFunction: Function;
+  baseExecuteFunction: Function;
+ 
   constructor(public route: ActivatedRoute,
     public router: Router) {
 
      }
 
-  ngOnInit() {
-    this.initialize();
-  }
+  // ngOnInit() {
+  //   this.initialize();
+  // }
 /**
  * callSuperInit
  */
@@ -32,32 +34,49 @@ public initialize() {
   this.mode = this.route.snapshot.paramMap.get('mode');
     this.selectMode();
     
+    
 }
   private selectMode(){
     switch (this.mode) {
+     
       case 'create':
         this.subTitle="Create";
-        // this.executeFunction=this.create;
-        
+        this.baseExecuteFunction= this.create;
         break;
       case 'update':
         this.subTitle="Update";
-        // this.executeFunction=this.update;
-      default:
+        this.baseExecuteFunction=this.update;
         break;
+      default:  
+      
+            this.subTitle="Mode Not Found";
+            this.baseExecuteFunction=this.noAction;
+      break;
+
+        
     }
 
   }
 
-  private create() {
+  public create() {
     alert('create');
   }
-  private update() {
+  public update() {
     alert('updated');
   }
 
-  private getFields() {
+  public cancel(){
+    alert('Please override cancel function');
+  }
+
+  public noAction(){
+    alert('No Action Found, Mode Not Found');
+  }
+  public getFields() {
     // this.fields=this._branchService.getBranchFields();
   }
+  //  public executeBaseFunction(){
+  //   this.baseExecuteFunction();
+  // }
 
 }

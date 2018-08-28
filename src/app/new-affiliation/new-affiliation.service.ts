@@ -13,21 +13,21 @@ fields: FormlyFieldConfig[] = [
         {
           className: 'flex-1',
           type: 'input',
-          key: 'firstName',
+          key: 'businessName',
           templateOptions: {
-            label: 'First Name',
-            placeholder:'Your name'
+            label: 'Business/Legal Name',
+            placeholder:'Business Name'
           },
         },
         {
           className: 'flex-1',
-          type: 'input',
-          key: 'lastName',
+          type: 'select',
+          key: 'ownership',
           templateOptions: {
-            label: 'Last Name',
+            label: 'Ownership',
           },
           expressionProperties: {
-            //'templateOptions.disabled': '!model.firstName',
+            
           },
         },
       ],
@@ -73,16 +73,16 @@ fields: FormlyFieldConfig[] = [
     },*/
     {
       type: 'input',
-      key: 'otherInput',
+      key: 'remarks',
       templateOptions: {
-        label: 'Other Input',
+        label: 'Remarks'
       },
     },
     {
       type: 'checkbox',
       key: 'otherToo',
       templateOptions: {
-        label: 'Other Checkbox',
+        label: 'Other Checkbox'
       },
     },
   ];

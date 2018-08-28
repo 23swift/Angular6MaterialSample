@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export interface BranchDisplayInfo {
+    Id:number;
     BranchName: String;
     BranchCode: String;
     DBAName: String;
@@ -8,8 +9,8 @@ export interface BranchDisplayInfo {
 
 }
 const ELEMENT_DATA: BranchDisplayInfo[] = [
- {BranchName: 'Aldo', BranchCode: 'BR300', DBAName: 'AldoMegamall'},
- {BranchName: 'Bench', BranchCode: 'BR300', DBAName: 'Bench'}
+ {Id:1,BranchName: 'Aldo', BranchCode: 'BR300', DBAName: 'AldoMegamall'},
+ {Id:2,BranchName: 'Bench', BranchCode: 'BR300', DBAName: 'Bench'}
 
 ];
 
@@ -21,9 +22,18 @@ const ELEMENT_DATA: BranchDisplayInfo[] = [
 export class BranchListComponent implements OnInit {
   displayedColumns: string[] = ['BranchName', 'BranchCode', 'DBAName', 'Attachment'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(
+    public route: ActivatedRoute,
+    public router: Router
+
+  ) { }
 
   ngOnInit() {
+  }
+  
+  private getItem(Id){
+
+    this.router.navigateByUrl('branch/update/'+Id);
   }
 
 }
